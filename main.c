@@ -59,7 +59,7 @@ int main(int argc, char *argv[]) {
 
     // b45 decode
     if (base45_decode(zbuf, &zbsize, in, 0)) {
-        perror("Ooops");
+        fprintf(stderr, "invalid base45 string\n");
         return EXIT_FAILURE;
     }
 
