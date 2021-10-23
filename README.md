@@ -1,4 +1,5 @@
 # greenpass string reader
+###### decode & dump data from greenpass 📄
 
 Dependencies: [base45-ansi-C](https://github.com/ehn-dcc-development/base45-ansi-C.git), [zlib](https://www.zlib.net/), [COSE-C](https://github.com/cose-wg/COSE-C.git).
 
