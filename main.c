@@ -14,14 +14,14 @@ static inline void cbor_unserialize(unsigned char *buffer, size_t bsize) {
     int type = 0;
 
     // https://datatracker.ietf.org/doc/html/rfc8152#section-4.2
-    HCOSE_SIGN1 cose_sign_1 = COSE_Decode(buffer, bsize, &type, COSE_sign1_object, NULL);
+    HCOSE_SIGN1 cose_sign_1 = (HCOSE_SIGN1)COSE_Decode(buffer, bsize, &type, COSE_sign1_object, NULL);
 
     if (!cose_sign_1 || type != COSE_sign1_object) {
         fprintf(stderr, "not a sign1 object\n");
         return;
     }
 
-    const cn_cbor *cose_sign_1_decoded = COSE_get_cbor(cose_sign_1);
+    const cn_cbor *cose_sign_1_decoded = COSE_get_cbor((HCOSE)cose_sign_1);
     if (!cose_sign_1_decoded || cose_sign_1_decoded->type != CN_CBOR_ARRAY) {
         fprintf(stderr, "code_sign_1: array was expected\n");
         return;
