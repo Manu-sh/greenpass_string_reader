@@ -12,12 +12,6 @@ so i decided to publish here.
 ### Building
 
 ```bash
-# clone this project
-git clone https://github.com/Manu-sh/greenpass_string_reader.git
-```
-
-
-```bash
 # then into the folder
 mkdir -p build && cd build
 cmake ..
