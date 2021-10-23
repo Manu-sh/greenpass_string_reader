@@ -1,6 +1,9 @@
 # greenpass string reader
 ###### decode & dump data from greenpass 📄
-<br>
+<a href="https://asciinema.org/a/lKzD6qlDnnNsyWtHZtFE7vZyG?autoplay=1&t=00:02">
+  <img src="https://asciinema.org/a/lKzD6qlDnnNsyWtHZtFE7vZyG.png" width="320px" height="200px" alt="" />
+</a>
+<br><br>
 
 Dependencies: [base45-ansi-C](https://github.com/ehn-dcc-development/base45-ansi-C.git), [zlib](https://www.zlib.net/), [COSE-C](https://github.com/cose-wg/COSE-C.git).
 
@@ -18,10 +21,6 @@ mkdir -p build && cd build
 cmake ..
 make -j`nproc`
 ```
-
-<a href="https://asciinema.org/a/lKzD6qlDnnNsyWtHZtFE7vZyG?autoplay=1&t=00:02">
-  <img src="https://asciinema.org/a/lKzD6qlDnnNsyWtHZtFE7vZyG.png" width="320px" height="200px" alt="" />
-</a>
 
 ### Useful links
 
