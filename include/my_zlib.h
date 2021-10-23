@@ -6,7 +6,6 @@
     #define CHUNK 16384
 #endif
 
-
 // slightly edited version of zerr() https://zlib.net/zlib_how.html
 static inline void z_err(FILE *istream, FILE *ostream, int ret) {
 
@@ -32,8 +31,6 @@ static inline void z_err(FILE *istream, FILE *ostream, int ret) {
     }
 
 }
-
-
 
 
 // slightly edited? version of inf() https://zlib.net/zlib_how.html

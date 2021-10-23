@@ -5,6 +5,7 @@
 #include <base45.h>
 #include <base45.c> /* yes.. i don't care */
 
+#include <my_common.h>
 #include <my_zlib.h>
 #include <my_cbor.h>
 
