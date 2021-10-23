@@ -18,9 +18,8 @@ git clone https://github.com/Manu-sh/greenpass_string_reader.git
 
 ```bash
 # then into the folder
-mkdir -p build && \\
-cd build       && \\
-cmake ..       && \\
+mkdir -p build && cd build
+cmake ..
 make -j`nproc`
 ```
 
