@@ -9,7 +9,7 @@ i don't care for now, but it's important to know.
 I started this to help a guy, then i have wasted hours trying to figure how to COSE-C should be used to this purpose, 
 so i decided to publish here.
 
-### Building
+### Build
 
 ```bash
 # then into the folder
