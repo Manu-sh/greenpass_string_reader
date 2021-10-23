@@ -11,7 +11,7 @@
 
 #include <cose/cose.h>
 
-static inline void cbor_unserialize(unsigned char *buffer, size_t bsize) {
+static inline void cbor_unserialize(const unsigned char *buffer, size_t bsize) {
 
     int type = 0;
 
@@ -54,8 +54,8 @@ int main(int argc, char *argv[]) {
     unsigned char zbuf[CHUNK] = {0}; // compressed
     unsigned char buf[CHUNK] = {0};
 
-    size_t zbsize = sizeof zbuf / sizeof *zbuf;
-    size_t bsize = sizeof buf / sizeof *buf;
+    const size_t zbsize = sizeof zbuf / sizeof *zbuf;
+    const size_t bsize  = sizeof buf  / sizeof *buf;
 
     // b45 decode
     if (base45_decode(zbuf, &zbsize, in, 0)) {
