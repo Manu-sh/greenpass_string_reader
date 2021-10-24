@@ -54,14 +54,16 @@ int main(int argc, char *argv[]) {
     unsigned char zbuf[CHUNK] = {0}; // compressed
     unsigned char buf[CHUNK] = {0};
 
-    const size_t zbsize = sizeof zbuf / sizeof *zbuf;
-    const size_t bsize  = sizeof buf  / sizeof *buf;
+    size_t zbsize = sizeof zbuf;
+    const size_t bsize  = sizeof buf;
 
     // b45 decode
     if (base45_decode(zbuf, &zbsize, in, 0)) {
         fprintf(stderr, "invalid base45 string\n");
         return EXIT_FAILURE;
     }
+
+    zbsize = sizeof zbuf; // just for sure
 
     // zlib decompress
     FILE * file_in = fmemopen(zbuf, zbsize, "r");
