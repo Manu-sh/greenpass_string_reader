@@ -42,13 +42,15 @@ static inline void dump(const cn_cbor *cb, int indent, bool as_key) {
             as_key = true;
             goto sequence;
         sequence:
-            for (cp = cb->first_child; cp; cp = cp->next, as_key = !as_key)
-                dump(cp, indent + 2, as_key);
+            for (cp = cb->first_child; cp; cp = cp->next, as_key = !as_key) {
+                dump(cp, indent+2, as_key);
+                if (!as_key) puts(",");
+            }
 
-            for (i = 0; i < indent; i++)
+            for (i = 0; as_key && i < indent; i++)
                 putchar(' ');
-            //if (!as_key) putchar(' ');
 
+            //if (!as_key) putchar('\n');
             putchar(finchar);
             as_key = false;
             break;
@@ -95,5 +97,5 @@ static inline void dump(const cn_cbor *cb, int indent, bool as_key) {
             break;
     }
 
-    if (!as_key) putchar('\n');
+    //if (!as_key) putchar('\n');
 }
