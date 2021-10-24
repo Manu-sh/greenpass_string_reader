@@ -44,6 +44,7 @@ static inline void cbor_unserialize(const unsigned char *buffer, size_t bsize) {
     }
 
     dump(cbor_payload, 0, 0);
+    puts("");
 }
 
 int main(int argc, char *argv[]) {

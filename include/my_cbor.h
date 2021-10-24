@@ -34,7 +34,6 @@ static inline void dump(const cn_cbor *cb, int indent, bool as_key) {
             finchar = ']';
             OUT("[\n");
             as_key = true;
-
             goto sequence;
         case CN_CBOR_MAP:
             finchar = '}';
@@ -53,7 +52,7 @@ static inline void dump(const cn_cbor *cb, int indent, bool as_key) {
             //if (!as_key) putchar('\n');
             putchar(finchar);
             as_key = false;
-            break;
+            return;
         case CN_CBOR_BYTES:
             OUT("h'");
             for (i = 0; i < cb->length; i++)
@@ -64,7 +63,6 @@ static inline void dump(const cn_cbor *cb, int indent, bool as_key) {
             putchar('"');
             CPY(cb->v.str, cb->length); /* should escape stuff */
             putchar('"');
-            if (as_key) putchar(':');
             break;
         case CN_CBOR_NULL:
             OUT("null");
@@ -80,11 +78,9 @@ static inline void dump(const cn_cbor *cb, int indent, bool as_key) {
             break;
         case CN_CBOR_INT:
             PRF("%ld", cb->v.sint);
-            if (as_key) putchar(':');
             break;
         case CN_CBOR_UINT:
             PRF("%lu", cb->v.uint);
-            if (as_key) putchar(':');
             break;
         case CN_CBOR_DOUBLE:
             PRF("%e", cb->v.dbl);
@@ -96,6 +92,6 @@ static inline void dump(const cn_cbor *cb, int indent, bool as_key) {
             PRF("???%d???", cb->type);
             break;
     }
-
+    if (as_key) putchar(':');
     //if (!as_key) putchar('\n');
 }
