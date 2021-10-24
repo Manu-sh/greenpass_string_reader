@@ -1,7 +1,7 @@
 # greenpass string reader
 ###### decode & dump data from greenpass 📄
-<a href="https://asciinema.org/a/5mkPw3GvWrFd2ZfsXEOmkDjtG?autoplay=1&t=00:02">
-  <img src="https://asciinema.org/a/5mkPw3GvWrFd2ZfsXEOmkDjtG.png" width="320px" height="200px" alt="" />
+<a href="https://asciinema.org/a/eRrAulKsa5Yfz7LxL7YuRzzZX?autoplay=1&t=00:02">
+  <img src="https://asciinema.org/a/eRrAulKsa5Yfz7LxL7YuRzzZX.png" width="320px" height="200px" alt="" />
 </a>
 <br><br>
 
