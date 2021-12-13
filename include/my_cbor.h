@@ -3,15 +3,15 @@
 
 // slightly edited version of https://github.com/jimsch/cn-cbor/blob/f713bf67bcf3e076d47e474ce060252ef8be48c7/test/test.c#L42
 // note: this is not a real pretty print function, you can't assume that is output can be parsed as json
-static inline void dump(const cn_cbor *cb, int indent, bool as_key) {
+static inline void dump(const cn_cbor *cb, unsigned indent, bool as_key) {
 
-    #define CPY(s, l) fwrite(s, l, 1, stdout)
-    #define OUT(s) printf("%s", s)
-    #define PRF(f, a) printf(f, a)
+#define CPY(s, l) fwrite(s, l, 1, stdout)
+#define OUT(s) printf("%s", s)
+#define PRF(f, a) printf(f, a)
 
     if (!cb) return;
 
-    int i;
+    unsigned i;
     cn_cbor *cp;
     char finchar = ')'; /* most likely */
 
